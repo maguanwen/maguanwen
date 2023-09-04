@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>first child</title>
+  <style>
+    body h1:first-child {
+      color: red;
+    }
+
+    /* 因为p是body的第二个元素，所以不生效 */
+    body p:first-child {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>first dom h1</h1>
+  <p>second dom p</p>
+  <p>first-child仅作用在父元素的第一个子元素上</p>
+</body>
+
+</html>
