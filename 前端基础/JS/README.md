@@ -1,5 +1,5 @@
 ## JS
 
-data-type：数据类型 [instanceof原理](https://juejin.cn/post/6844903821483704327)
+data-type：数据类型
 
-determin-data-type.html: 判断数据类型 - todo
+determin-data-type.html: 分别通过typeof、instanceof等方法判断数据类型   [instanceof原理](https://juejin.cn/post/6844903821483704327)
