@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>closure</title>
+</head>
+
+<body>
+  <h1>closure</h1>
+  <p>闭包是指有权访问另一个函数作用域中的变量的函数</p>
+  <p>闭包的作用：1.读取函数内部的变量；2.让这些变量的值始终保持在内存中</p>
+  <p>闭包的缺点：1.常驻内存会增大内存使用量，使用不当会造成内存泄露；2.闭包会在父函数外部，改变父函数内部变量的值</p>
+
+  <p>
+    如下述代码，当test对象第一次被赋值时，内部变量num会一直保留在内存中，所以第一次打印112。
+    直到test被销毁，也就是 test=null 之后，num才会被销毁。之后对test重新赋值，num重新被创建，所以第二次打印111。
+  </p>
+
+  <pre>
+    <code>
+    function getNumber () {
+      let num = 111;
+      addNumber = function () {
+        num++;
+      }
+      return function () {
+        return num;
+      }
+    }
+
+    let test = getNumber();
+    addNumber();
+    console.log(test()); // 112
+    test = null;
+    test = getNumber();
+    console.log(test()); // 111
+    </code>
+  </pre>
+  <script>
+    // 1.读取函数内部的变量
+    // 2.让这些变量的值始终保持在内存中
+    function f1 () {
+      var n = 999;
+      function f2 () {
+        console.log(n);
+      }
+      return f2;
+    }
+    var result = f1();
+    result(); // 999
+
+    function getNumber () {
+      let num = 111;
+      addNumber = function () {
+        num++;
+      }
+      return function () {
+        return num;
+      }
+    }
+
+    let test = getNumber();
+    addNumber();
+    console.log(test()); // 112
+    test = null;
+    test = getNumber();
+    console.log(test()); // 111
+
+  </script>
+</body>
+
+</html>
