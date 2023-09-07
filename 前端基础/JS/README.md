@@ -7,3 +7,4 @@ determin-data-type.html: 分别通过typeof、instanceof等方法判断数据类
 closure: 闭包相关
  - closure.html：闭包
  - use-closure.html：闭包应用，防抖&节流
+ - prototype: 原型
