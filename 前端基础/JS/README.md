@@ -8,3 +8,6 @@ closure: 闭包相关
  - closure.html：闭包
  - use-closure.html：闭包应用，防抖&节流
  - prototype: 原型
+
+ async:异步相关
+- setTimeout：setTimeout基本用法

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>setTimeout</title>
+</head>
+
+<body>
+  setTimeout中是否使用箭头函数的区别
+
+  <script>
+    function f1 (num) {
+      console.log(`foo${num}`);
+      setTimeout(()=>{
+        console.log(`bar${num}`);
+      })
+    }
+    f1(1) 
+    f1(2)
+    setTimeout(() => {
+      f1(3)
+    })
+
+    /*
+    foo1
+    foo2
+    bar1
+    bar2
+    foo3
+    bar3
+    */
+  </script>
+</body>
+
+</html>
