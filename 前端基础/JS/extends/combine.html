@@ -9,7 +9,6 @@
 <body>
   <h1>组合继承方案</h1>
   <p>1. 组合两种方法。用原型链实现对原型属性和方法的继承，用借用构造函数来实现实例属性的继承。</p>
-  <p>2. 缺点，多个实例对引用类型的操作会被篡改</p>
 
   <script>
     // 组合继承
@@ -23,12 +22,16 @@
     }
 
     function Sub1 (name, age) {
-      //继承自Super1
+      // 继承自Super1
+      // 第二次调用Super1()
       Super1.call(this, name);
       this.age = age;
     }
-
-    Sub1.prototype =  new Super1();
+    
+    // 继承方法
+    // 构建原型链
+    // 第一次调用Super1()
+    Sub1.prototype = new Super1();
 
     // 重写Sub1.prototype的constructor属性，指向自己的构造函数Sub1
     Sub1.prototype.constructor = Sub1;
@@ -47,7 +50,7 @@
     console.log(instance2.getColor()); // ['red', 'blue']
     console.log(instance2.age); // 20
 
-    
+
   </script>
 </body>
 
